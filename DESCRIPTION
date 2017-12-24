@@ -1,10 +1,10 @@
 Package: woodhouse
 Type: Package
-Title: Basic Tools for Cleaning Dirty Data
-Version: 0.1.0
+Title: Basic Tools to Prepare Data for Analysis
+Version: 0.1.1
 Author: Clarissa Ong
 Maintainer: Clarissa Ong <clarissa.ong@usu.edu>
-Description: This package contains functions that simplify cleaning of messy data. Functions can be used to rescore, recode, and categorize existing variables.
+Description: This package contains functions that clean messy data and create plots that assess normality. Functions can be used to rescore, recode, and categorize existing variables. In addition, functions in the package can plot histograms, q-q plots, and scatterplots over multiple vectors.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

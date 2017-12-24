@@ -4,10 +4,13 @@ devtools::load_all("~/Box Sync/Resources/Statistics/R/woodhouse")
 
 df = data.frame(
   x = rep(c(0, 1, 2, 3, 4, 5, 6), 6),
-  y = rep(c(0, 1, 2, 3, 4, 5), 7)
+  y = rep(c(0, 1, 2, 3, 4, 5), 7),
+  z = rnorm(42)
 )
 
-qqplots(df)
+ivs = df[, c(1, 3)]
+scatterplots(df, y, ivs)
+
 reverse = function(x, highest = 6) {
   x_rev = highest - x
   return(x_rev)

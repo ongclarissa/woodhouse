@@ -52,6 +52,35 @@ qqplots = function(data, ...){
   }
 }
 
+#' Plot multiple scatterplots
+#'
+#' Plots scatterplot for DV and each specified IV in data frame
+#'
+#' @param data data frame
+#' @param y dependent variable
+#' @param x subsetted data frame of independent variables
+#' @param ... other arguments that are passed to the ggplot() function
+#'
+#' @return plot in R environment
+#'
+#' @export
+#'
+#' @importFrom ggplot2
+
+scatterplots = function(data, y, x, ...){
+
+  yname = deparse(substitute(y))
+  xname = names(x)
+
+  for(i in seq_along(xname)){
+    print(ggplot(data,
+                 aes_string(y = yname,
+                            x = xname[i])) +
+            geom_point() +
+            theme_bw())
+  }
+}
+
 #' Recode reverse scored values
 #'
 #' Recodes variables that are reverse scored on Likert-type scales
