@@ -4,7 +4,7 @@
 \alias{scatterplots}
 \title{Plot multiple scatterplots}
 \usage{
-scatterplots(data, y, x, ...)
+scatterplots(data, y, x, fit = "lm", ...)
 }
 \arguments{
 \item{data}{data frame}
@@ -12,6 +12,8 @@ scatterplots(data, y, x, ...)
 \item{y}{dependent variable}
 
 \item{x}{subsetted data frame of independent variables}
+
+\item{fit}{specify modeling function for best fitting line, default = "lm"}
 
 \item{...}{other arguments that are passed to the ggplot() function}
 }
