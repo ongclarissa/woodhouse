@@ -1,3 +1,57 @@
+#' Plot multiple histograms
+#'
+#' Plots histogram for each vector in data frame
+#'
+#' @param data data frame
+#' @param binwidth binwidth in histogram; default = 1
+#' @param ... other arguments that are passed to the ggplot() function
+#'
+#' @return plot in R environment
+#'
+#' @export
+#'
+#' @importFrom ggplot2
+
+histograms = function(data, binwidth = 1, ...){
+
+  namae = names(data)
+
+  for(i in seq_along(namae)){
+    print(ggplot(data,
+                 aes_string(x = namae[i])) +
+            geom_histogram(binwidth = binwidth,
+                           na.rm = TRUE,
+                           alpha = 0.7,
+                           fill = "lavenderblush4") +
+            theme_bw())
+  }
+}
+
+#' Plot multiple quantile-quantile plots
+#'
+#' Plots q-q plot for each vector in data frame
+#'
+#' @param data data frame
+#' @param ... other arguments that are passed to the ggplot() function
+#'
+#' @return plot in R environment
+#'
+#' @export
+#'
+#' @importFrom ggplot2
+
+qqplots = function(data, ...){
+
+  namae = names(data)
+
+  for(i in seq_along(namae)){
+    print(ggplot(data) +
+            stat_qq(aes_string(sample = namae[i])) +
+            labs(x = namae[i]) +
+            theme_bw())
+  }
+}
+
 #' Recode reverse scored values
 #'
 #' Recodes variables that are reverse scored on Likert-type scales
