@@ -10,7 +10,7 @@
 #'
 #' @export
 #'
-#' @importFrom ggplot2
+#' @import ggplot2
 
 histograms = function(data, binwidth = 1, ...){
 
@@ -38,7 +38,7 @@ histograms = function(data, binwidth = 1, ...){
 #'
 #' @export
 #'
-#' @importFrom ggplot2
+#' @import ggplot2
 
 qqplots = function(data, ...){
 
@@ -59,15 +59,16 @@ qqplots = function(data, ...){
 #' @param data data frame
 #' @param y dependent variable
 #' @param x subsetted data frame of independent variables
+#' @param fit specify modeling function for best fitting line, default = "lm"
 #' @param ... other arguments that are passed to the ggplot() function
 #'
 #' @return plot in R environment
 #'
 #' @export
 #'
-#' @importFrom ggplot2
+#' @import ggplot2
 
-scatterplots = function(data, y, x, ...){
+scatterplots = function(data, y, x, fit = "lm", ...){
 
   yname = deparse(substitute(y))
   xname = names(x)
@@ -76,7 +77,11 @@ scatterplots = function(data, y, x, ...){
     print(ggplot(data,
                  aes_string(y = yname,
                             x = xname[i])) +
-            geom_point() +
+            geom_point(na.rm = TRUE) +
+            geom_smooth(method = fit,
+                        se = FALSE,
+                        na.rm = TRUE,
+                        color = "indianred4") +
             theme_bw())
   }
 }
@@ -183,6 +188,22 @@ categorize = function(x, value1, value2, group0 = 0, group1 = 1, group2 = 2){
   x1 = ifelse(x <= value1, group0,
               ifelse(x > value1 & x <= value2, group1, group2))
   return(x1)
+}
+
+
+#' Convert factors to numeric vectors
+#'
+#' Converts factors to numeric vectors without changing original values
+#'
+#' @param x variable to be converted
+#'
+#' @return numeric vector
+#'
+#' @export
+
+to_numeric = function(x){
+  x_num = as.numeric(as.character(x))
+  return(x_num)
 }
 
 `%>%` = magrittr::`%>%`

@@ -1,4 +1,7 @@
+# run this to update package with new functions
 devtools::document()
+
+
 devtools::load_all()
 devtools::load_all("~/Box Sync/Resources/Statistics/R/woodhouse")
 
@@ -48,3 +51,5 @@ histogram = function(data, bins = 1){
                 xlab = label))
   }
 }
+
+
