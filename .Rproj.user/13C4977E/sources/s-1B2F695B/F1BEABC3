@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589544098715.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F1BEABC3",
+    "lastKnownWriteTime" : 1589223562,
+    "last_content_update" : 1589223562,
+    "path" : "~/Box Sync/Resources/Statistics/R/woodhouse/testing.R",
+    "project_path" : "testing.R",
+    "properties" : {
+        "cursorPosition" : "4,0",
+        "scrollLine" : "1",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
