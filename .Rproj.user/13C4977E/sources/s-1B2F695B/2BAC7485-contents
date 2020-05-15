@@ -258,7 +258,7 @@ add_prefix = function(x, prefix){
 remove_prefix = function(data, prefix){
 
   data1 <- data %>%
-    rename_at(vars(starts_with("prefix")), ~str_remove(., "prefix"))
+    rename_at(vars(starts_with(prefix)), ~str_remove(., prefix))
 
   return(data1)
 
