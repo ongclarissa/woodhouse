@@ -2,12 +2,12 @@
 % Please edit documentation in R/functions.R
 \name{remove_prefix}
 \alias{remove_prefix}
-\title{Remove prefix from variable name}
+\title{Remove prefix from variable names}
 \usage{
-remove_prefix(x, prefix)
+remove_prefix(data, prefix)
 }
 \arguments{
-\item{x}{variable to be renamed}
+\item{data}{data where variables are located}
 
 \item{prefix}{character string to be removed}
 }
@@ -15,5 +15,5 @@ remove_prefix(x, prefix)
 renamed variable
 }
 \description{
-Renames variable by removing character string from existing variable name
+Renames variables by removing character string from existing variable names
 }

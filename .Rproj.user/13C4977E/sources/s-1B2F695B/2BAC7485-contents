@@ -244,21 +244,23 @@ add_prefix = function(x, prefix){
 }
 
 
-#' Remove prefix from variable name
+#' Remove prefix from variable names
 #'
-#' Renames variable by removing character string from existing variable name
+#' Renames variables by removing character string from existing variable names
 #'
-#' @param x variable to be renamed
+#' @param data data where variables are located
 #' @param prefix character string to be removed
 #'
 #' @return renamed variable
 #'
 #' @export
 
-remove_prefix = function(x, prefix){
+remove_prefix = function(data, prefix){
 
-  x1 = str_remove(x, "prefix")
-  return(x1)
+  data1 <- data %>%
+    rename_at(vars(starts_with("prefix")), ~str_remove(., "prefix"))
+
+  return(data1)
 
 }
 
