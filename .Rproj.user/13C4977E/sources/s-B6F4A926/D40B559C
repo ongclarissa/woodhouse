@@ -1,19 +1,19 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1589542116976.000,
+    "created" : 1590501294491.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3101157682",
-    "id" : "2BAC7485",
-    "lastKnownWriteTime" : 1589546446,
-    "last_content_update" : 1589546446527,
+    "hash" : "0",
+    "id" : "D40B559C",
+    "lastKnownWriteTime" : 1590502274,
+    "last_content_update" : 1590502274059,
     "path" : "~/Box Sync/Resources/Statistics/R/woodhouse/R/functions.R",
     "project_path" : "R/functions.R",
     "properties" : {
-        "cursorPosition" : "263,0",
-        "scrollLine" : "244"
+        "cursorPosition" : "278,7",
+        "scrollLine" : "270"
     },
     "read_only" : false,
     "read_only_alternatives" : [

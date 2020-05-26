@@ -264,4 +264,53 @@ remove_prefix = function(data, prefix){
 
 }
 
+
+#' Calculate reliable change index for symptoms
+#'
+#' Calculates reliable change index based on criterion defined in Jacobson & Traux (1991) and assumes decrease is improvement
+#'
+#' @param x_pre vector for scores at pretest
+#' @param x_post vector for scores at posttest
+#'
+#' @return categorical vector indicating RCI status
+#'
+#' @export
+
+rci_dec <- function(x_pre, x_post){
+
+  x_diff = x_post - x_pre
+  x_diffse = parameters::standard_error(x_diff)
+  x_rci = x_diff/x_diffse
+
+  x_rci_cat = if_else(x_rci < -1.96, 1, 0)
+
+  return(x_rci_cat)
+
+}
+
+
+#' Calculate reliable change index for wellbeing
+#'
+#' Calculates reliable change index based on criterion defined in Jacobson & Traux (1991) and assumes increase is improvement
+#'
+#' @param x_pre vector for scores at pretest
+#' @param x_post vector for scores at posttest
+#'
+#' @return categorical vector indicating RCI status
+#'
+#' @export
+
+rci_inc <- function(x_pre, x_post){
+
+  x_diff = x_post - x_pre
+  x_diffse = parameters::standard_error(x_diff)
+  x_rci = x_diff/x_diffse
+
+  x_rci_cat = if_else(x_rci > 1.96, 1, 0)
+
+  return(x_rci_cat)
+
+}
+
+
 `%>%` = magrittr::`%>%`
